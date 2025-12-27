@@ -5,9 +5,9 @@ This repository is a toolbox of reusable scripts you can copy and use anywhere.
 
 ## Conent
 
-- **All scripts** → [`Assets/Scripts`](Assets/Scripts)
-- **UI scripts** → [`Assets/Scripts/UI`](Assets/Scripts/UI)
-- **ToolTips (UI)** → [`Assets/Scripts/UI/ToolTips`](Assets/Scripts/UI/ToolTipS)
+- **All scripts** → [`ReadySystems/Assets/Scripts`](Assets/Scripts)
+- **UI scripts** → [`ReadySystems/Assets/Scripts/UI`](Assets/Scripts/UI)
+- **ToolTips (UI)** → [`ReadySystems/Assets/Scripts/UI/ToolTips`](Assets/Scripts/UI/ToolTipS)
 
 ## Notes
 
