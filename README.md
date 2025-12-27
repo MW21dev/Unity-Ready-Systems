@@ -11,4 +11,4 @@ This repository is a toolbox of reusable scripts you can copy and use anywhere.
 
 
 ## Notes
-- You can copy any folder you need into another Unity project (keep `.meta` files when copying).
+- You can copy any folder you need into another Unity project
