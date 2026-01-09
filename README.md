@@ -10,7 +10,7 @@ This repository is a toolbox of reusable scripts you can copy and use anywhere.
     - ToolTips System → [`ReadySystems/Assets/Scripts/UI/ToolTips`](ReadySystems/Assets/Scripts/UI/ToolTipS)
 - All Editor Scripts → [`ReadySystems/Assets/Editor/`](ReadySystems/Assets/Editor/)
   - Utilities → [`ReadySystems/Assets/Editor/Utilities`](ReadySystems/Assets/Editor/Utilities)
-    - CSV to ScriptableObject Tool → [`ReadySystems/Assets/Editor/Utilities/CSVtoSO`](ReadySystems/Assets/Editor/Utilities/CSVtoSO)
+    - CSV to ScriptableObject Tool → [`ReadySystems/Assets/Editor/Utilities/CSVtoSO.cs`](ReadySystems/Assets/Editor/Utilities/CSVtoSO.cs)
 
 ## Notes
 - You can copy any folder you need into another Unity project
