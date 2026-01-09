@@ -5,7 +5,7 @@ public class ToolTipManager : MonoBehaviour
 {
     //Manager script for tooltips
     //Singleton pattern for easy access
-    //Usage: Call ToolTipManager.Instance.ShowToolTip("Your tooltip text") to display the tooltip
+    //Usage: It keeps track of all tooltip GameObjects in the scene
     //Put all tooltip GameObjects in the toolTips list in the inspector
 
     public static ToolTipManager Instance { get; private set; }

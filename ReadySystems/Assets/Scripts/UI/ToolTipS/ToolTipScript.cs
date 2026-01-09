@@ -27,9 +27,14 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     [Header("Settings")]
     public int characterWrapLimit = 50; //Character limit before enabling layout element
     public int toolTipID = 0; //ID to identify which tooltip to use from the ToolTipManager
+    public float showDelay = 0.5f; //Delay before showing the tooltip
 
     [Header("Content")]
     public List<string> toolTipContent; //Text to display in the tooltip
+
+    [Header("Hover Settings")]
+    private bool isHovering = false;
+
 
     void Start()
     {
@@ -38,6 +43,20 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
         layoutElement = toolTipObject.GetComponent<LayoutElement>();
         canvasGroup = toolTipObject.GetComponent<CanvasGroup>();
     }
+
+    void Update()
+    {
+        if (isHovering)
+        {
+            showDelay -= Time.unscaledDeltaTime;
+            if (showDelay <= 0f)
+            {
+                ShowToolTip(toolTipContent);
+                isHovering = false; 
+            }
+        }
+    }
+
 
     public void ShowToolTip(List<string> content)
     {
@@ -76,12 +95,14 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     public void HideToolTip()
     {
         canvasGroup.alpha = 0f;
+        showDelay = 0.5f;
+        isHovering = false;
     }
 
     //For UI elements
     public void OnPointerEnter(PointerEventData eventData)
     {
-        ShowToolTip(toolTipContent);
+        isHovering = true;
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -92,7 +113,7 @@ public class ToolTipScript : MonoBehaviour, IPointerEnterHandler, IPointerExitHa
     //For game objects
     public void OnMouseEnter()
     {
-        ShowToolTip(toolTipContent);
+        isHovering = true;
     }
     public void OnMouseExit()
     {
