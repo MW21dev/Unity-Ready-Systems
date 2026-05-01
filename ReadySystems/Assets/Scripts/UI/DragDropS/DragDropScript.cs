@@ -12,6 +12,7 @@ public class DragDropScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     private CanvasGroup canvasGroup;
     private RectTransform rectTransform;
     private Transform originalParent;
+    public Transform dropBoxParent;
 
     [Header("Settings")]
     [SerializeField] private float doubleClickTime = 0.3f;
@@ -79,6 +80,23 @@ public class DragDropScript : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         }
 
         //Add logic for when dragging ends
+
+        //If using a drop box
+        if(eventData.pointerEnter != null)
+        {
+            var dropBox = eventData.pointerEnter.GetComponent<DragDropDropBox>();
+            if (dropBox != null)
+            {
+                dropBox.OnDrop(gameObject);
+                return;
+            }
+            var dropBoxParent = eventData.pointerEnter.GetComponentInParent<DragDropDropBox>();
+            if (dropBoxParent != null)
+            {
+                dropBoxParent.OnDrop(gameObject);
+                return;
+            }
+        }
     }
 
     public void OnPointerClick(PointerEventData eventData)
